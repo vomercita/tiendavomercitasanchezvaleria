@@ -1,11 +1,15 @@
 import React from "react";
+import CartWidget from "./CartWidget";
+import 'bootstrap/dist/css/bootstrap.css';
 
-const NavBar=()=>{
-    return (
-        
+const NavBar=({nombre})=>{
+  const displayNombre= nombre.toUpperCase();
+    
+  return (
+    <>    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">Tienda Vomercita</a>
+    <a class="navbar-brand" href="#">{displayNombre}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,8 +26,9 @@ const NavBar=()=>{
         </li>
       </ul>
     </div>
+    <a class="navbar-brand" href="#"> {<CartWidget/>} </a>
   </div>
-</nav>
+</nav></>
     )
 
 };
