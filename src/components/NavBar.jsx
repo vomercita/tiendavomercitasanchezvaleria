@@ -1,6 +1,8 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 import 'bootstrap/dist/css/bootstrap.css';
+import NavBarEstilo from "./NavBarEstilo";
+
 
 const NavBar=({nombre})=>{
   const displayNombre= nombre.toUpperCase();
@@ -14,15 +16,15 @@ const NavBar=({nombre})=>{
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item mx-5">
+          <NavBarEstilo class="navbar-brand" href="#" text={"Home"} />
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
+        <li class="nav-item mx-5">
+         <NavBarEstilo class="navbar-brand" href="#" text={"Productos"} />
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Precios</a>
+        <li class="nav-item mx-5">
+         <NavBarEstilo class="navbar-brand" href="#" text={"Contacto"} />
         </li>
       </ul>
     </div>
