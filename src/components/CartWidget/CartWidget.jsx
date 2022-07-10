@@ -1,4 +1,4 @@
-import carrito from '../carrito.svg';
+import carrito from './carrito.svg';
 
 const CartWidget = () => {
     return ( 

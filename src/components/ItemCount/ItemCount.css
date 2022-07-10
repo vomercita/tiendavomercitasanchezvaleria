@@ -1,0 +1,36 @@
+#pProducto, #pAgregar {
+    color:pink;
+    font-weight: bolder;
+    margin: auto;
+    text-align: center;
+}
+#pAgregar:hover {color:brown}
+#divAgregar {
+    border: solid;
+    border-color: pink;
+    border-radius: 4px;
+    width:25%;
+    margin: auto;
+}
+#divAgregar:hover{cursor: pointer; 
+background-color: pink;
+}
+
+#divBotones {
+    color:brown;
+    font-weight: bolder;
+    text-align: center;
+    font-size: xx-large;
+        
+}
+button {
+    color:brown;
+    font-weight: bolder;
+    margin: 15px;
+    text-align: center;
+    padding: 10px;
+    border-color: brown;
+    background-color: pink;
+    border-radius: 4px;
+}
+button:hover {background-color: rgb(248, 213, 219)}
