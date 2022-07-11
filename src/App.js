@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <NavBar nombre= "Tienda Vomercita"/>
-    <ItemListContainer greeting= "Bienvenidos"/>
+    <ItemListContainer/>
     <ItemCount/>
     </>
   )
