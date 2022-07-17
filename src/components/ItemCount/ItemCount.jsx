@@ -1,28 +1,30 @@
-import { useState } from "react";
+import {useState } from "react";
 import './ItemCount.css';
 
-const ItemCount = ({stock=8}) => {
+const ItemCount = ({stock, inicial}) => {
      
-    const [contador, setContador] = useState (0)
+    const [contador, setContador] = useState (inicial)
     const mas = () => {
-        if (contador<stock) {setContador (contador+1)}
+        if (contador<stock) {setContador (prev=>prev+1)}
     }
     const menos = () => {
-        if (contador>0) {setContador (contador -1)}
+        if (contador>1 && stock>0) {setContador (prev=>prev-1)}
     } 
+     
+    const onAdd= ()=>  {console.log ({contador})        
+    }
 
     return (  <>
         <div>
             <p id= "pProducto">Producto</p>
         </div>
         <div id= "divBotones">
-            <button onClick={()=> menos()}> - </button>
+            <button onClick={menos} > - </button>
             <>{contador}</>
-            <button onClick={()=> mas()}> + </button>
+            <button onClick={mas}> + </button>
         </div>
-        <div id="divAgregar">
-            <p id="pAgregar">Agregar al carrito</p>
-        </div>
+        <button id= "botonAgregar" onClick={onAdd}> Agregar al carrito</button>
+        
         </>
     );
 }

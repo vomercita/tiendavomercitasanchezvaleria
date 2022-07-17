@@ -6,18 +6,17 @@ import ItemList from "./ItemList";
 const ItemListContainer = () => {
 
 const [items, setItems]= useState();  
-console.log (itemsArray)
 
 useEffect=(()=>{   const itemsPromise = new Promise (
         (resolve, reject)=>{
             setTimeout (
-                ()=>{resolve (items)}
-                ,2000)
+                ()=>{resolve (itemsArray)
+               },2000)
         }
     );
         itemsPromise
             .then (
-                (res)=>{setItems (itemsArray)}
+                (res)=>{setItems (res)}
                 )
             .catch (
                 (rej)=>{console.log (rej, "error")}
@@ -29,7 +28,7 @@ useEffect=(()=>{   const itemsPromise = new Promise (
     
    return (
         
-   <ItemList />
+   <ItemList items= {items}/>
    ) 
 }
 export default ItemListContainer;

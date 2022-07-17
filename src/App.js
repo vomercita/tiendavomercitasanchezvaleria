@@ -9,7 +9,9 @@ function App() {
     <>
     <NavBar nombre= "Tienda Vomercita"/>
     <ItemListContainer/>
-    <ItemCount/>
+    <ItemCount stock={8} inicial= {1}/>
+    
+  
     </>
   )
 }
