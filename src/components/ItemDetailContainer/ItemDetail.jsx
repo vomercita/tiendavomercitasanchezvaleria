@@ -6,9 +6,9 @@ const ItemDetail= ({detalle}) => {
     return (
 <>
 <p> DETALLE</p>
-<div className='row'>
-            <div className='col-sm-4'>
-                <div className="card">
+<div className='container-fluid w-50'>
+            <div className='d-flex'>
+                <div className="card text-center">
                     <div className="card-body">
                         <h1 className="card-title"> {detalle.nombre}</h1>
                         <p className="card-text">{detalle.categoria}</p>
