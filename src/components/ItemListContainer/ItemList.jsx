@@ -14,31 +14,3 @@ const ItemList = ({productos}) => {
  
 export default ItemList;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* const ItemList = () => {
-    return ( 
-        <><p> ITEM LIST</p>
-        <Item /></>
-);
-}
- 
-export default ItemList; */
