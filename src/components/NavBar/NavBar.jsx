@@ -6,9 +6,9 @@ import CartWidget from "../CartWidget/CartWidget.jsx";
 
 const NavBar=({nombre})=>{
   const displayNombre= nombre.toUpperCase();
-   
+  
   return (
-    <>    
+    <>  
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
     <a className="navbar-brand" href="#">{displayNombre}</a>

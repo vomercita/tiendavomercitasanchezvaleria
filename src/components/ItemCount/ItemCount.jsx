@@ -5,7 +5,7 @@ const ItemCount = ({stock, inicial}) => {
      
     const [contador, setContador] = useState (inicial)
     const mas = () => {
-        if (contador<stock) {setContador (prev=>prev+1)}
+        if (contador<stock) {setContador (prev=>prev+1)} else {alert ("Lo lamentamos, no puedes agregar más unidades de este producto")}
     }
     const menos = () => {
         if (contador>1 && stock>0) {setContador (prev=>prev-1)}
@@ -15,9 +15,7 @@ const ItemCount = ({stock, inicial}) => {
     }
 
     return (  <>
-        <div>
-            <p id= "pProducto">Producto</p>
-        </div>
+        
         <div id= "divBotones">
             <button onClick={menos} > - </button>
             <>{contador}</>

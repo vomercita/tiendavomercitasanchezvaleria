@@ -2,16 +2,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 import NavBar from './components/NavBar/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount.jsx';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 
 function App() {
   return (
     <>
     <NavBar nombre= "Tienda Vomercita"/>
     <ItemListContainer/>
-    <ItemCount stock={8} inicial= {1}/>
-    
-  
+    <ItemDetailContainer/>
     </>
   )
 }

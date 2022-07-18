@@ -1,29 +1,22 @@
-
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
-import itemsArray from './itemsArray';
 
-const Item = () => {
-    return (
-<>
-<p> ITEM LIST</p>
-{itemsArray.map((producto)=> 
-<> 
-    <div className="card">
-        <div className="card-img-top" src="..." alt="Card image cap"></div>
-        <div className="card-body">
-            <h5 className="card-title"> {producto.nombre}</h5>
-            <p className="card-text">{producto.detalle}</p>
-            <p className="card-text">{producto.precio}</p>
-            <a href="#" className="btn btn-primary">Ver detalle del producto</a>
-            <p className="card-text">{producto.stock}</p>
-        </div>
-    </div>
-</>    
-   )}
-</>
-
-     );
+const Item = ({item}) => {
+    return ( <> 
+        <div>ITEM</div> 
+        <div className='row'>
+            <div className='col-sm-4'>
+                <div className="card">
+                    <div className="card-body">
+                        <h1 className="card-title"> {item.nombre}</h1>
+                        <p className="card-text">{item.categoria}</p>
+                        <img src= {item.foto}/>
+                        <button >Ver detalle del producto</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+</>  );
 }
  
 export default Item;
