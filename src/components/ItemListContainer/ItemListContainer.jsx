@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import productosArray from './productosArray';
 import ItemList from './ItemList';
+import { Link, useParams } from "react-router-dom";
 
 function promesaProductos (){
     return new Promise ((resolve, reject)=>{
@@ -10,14 +11,20 @@ function promesaProductos (){
         });
 }
 const ItemListContainer=()=>{
+    const {name}= useParams();
     const [productosEstado, setProductosEstado]= useState ([]);
 
     useEffect(()=>{
         promesaProductos()
           .then((res)=>{
-          setProductosEstado (res)
+            const products= res;
+            if (name){
+                setProductosEstado (products.filter(( product=> product.categoria==name)))
+
+            }else{setProductosEstado(products)}
+          
                 })}
-    ,[]);
+    ,[name]);
 
 return(
     <div>
