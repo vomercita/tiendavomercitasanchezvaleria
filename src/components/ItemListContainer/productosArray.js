@@ -13,7 +13,7 @@ const productosArray = [
         nombre: "Poroto negro",
         categoria:"Almacén",
         detalle: "Poroto Negro x 500g.",
-        foto: "./img/poroto.jpg",
+        foto: "../img/poroto.jpg",
         precio:"$150", 
         stock: 6
     },  
