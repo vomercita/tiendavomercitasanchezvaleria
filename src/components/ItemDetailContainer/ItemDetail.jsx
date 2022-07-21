@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 
 const ItemDetail= ({detalle}) => {
+    
     return (
 <>
 <p> DETALLE</p>

@@ -3,25 +3,20 @@ import ItemDetail from  './ItemDetail';
 import productosArray from '../ItemListContainer/productosArray'
 import {Link, useParams } from "react-router-dom";
 
-function promesaDetalleProductos (){
-    return new Promise ((resolve, reject)=>{
-        setTimeout( ( )=>{
-                 resolve (productosArray);
-                },2000);
-        });
-}
+   
 const ItemDetailContainer=()=>{
     const {id}= useParams();
-    const [detalleEstado, setDetalleEstado]= useState ([]);
+    const [detalleEstado, setDetalleEstado]= useState ({});
+
+const promesaDetalle= new Promise ((resolve, reject)=>{
+    setTimeout (()=>{resolve(productosArray)}, 2000);
+});
 
     useEffect(()=>{
-        promesaDetalleProductos()
-          .then((res)=>{
-            const details= res;
-            if (id) {
-                setDetalleEstado (details.filter ((detail=> detail.id == id)))
-            }else{setDetalleEstado(details)}
-                })} 
+        promesaDetalle.then((res)=>{
+            const details= res.filter((detalle)=>detalle.id==id);
+            setDetalleEstado(details[0]) ;
+                })}
 
     ,[id]);
 
