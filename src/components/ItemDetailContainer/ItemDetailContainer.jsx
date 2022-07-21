@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from  './ItemDetail';
 import productosArray from '../ItemListContainer/productosArray'
-import {Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 
    
 const ItemDetailContainer=()=>{
@@ -23,7 +23,7 @@ const promesaDetalle= new Promise ((resolve, reject)=>{
 return(
     <div>
         <div>
-            <p>ITEMDETAILCONTAINER</p>
+            
             <ItemDetail detalle={detalleEstado}/>
         </div>
     </div>

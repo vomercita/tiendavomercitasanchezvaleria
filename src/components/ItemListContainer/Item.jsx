@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 const Item = ({item}) => {
     return ( <> 
-        <div>ITEM</div> 
+         
         <div className='container-fluid w-25'>
             <div className='d-flex'>
                 <div className="card text-center">
