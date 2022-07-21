@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from  './ItemDetail';
 import productosArray from '../ItemListContainer/productosArray'
+import {Link, useParams } from "react-router-dom";
 
 function promesaDetalleProductos (){
     return new Promise ((resolve, reject)=>{
@@ -10,14 +11,19 @@ function promesaDetalleProductos (){
         });
 }
 const ItemDetailContainer=()=>{
+    const {id}= useParams();
     const [detalleEstado, setDetalleEstado]= useState ([]);
 
     useEffect(()=>{
         promesaDetalleProductos()
           .then((res)=>{
-          setDetalleEstado (res[1])
-                })}
-    ,[]);
+            const details= res;
+            if (id) {
+                setDetalleEstado (details.filter ((detail=> detail.id == id)))
+            }else{setDetalleEstado(details)}
+                })} 
+
+    ,[id]);
 
 return(
     <div>

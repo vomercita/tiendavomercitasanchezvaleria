@@ -11,12 +11,9 @@ function App() {
     <BrowserRouter>
         <NavBar nombre= "Tienda Vomercita"/>
         <Routes>  
-              <Route path= "/" element={<ItemListContainer/>}> </Route>
+              <Route index element={<ItemListContainer/>}> </Route>
               <Route path="/category/:name" element={<ItemListContainer/>}> </Route>
-
-              <Route path="/detail" element={<ItemDetailContainer/>}> </Route>
               <Route path="/item/:id" element={<ItemDetailContainer/>}> </Route>
-
               <Route path="*" element={<div>ERROR 404</div>}> </Route>
          {/*  <Route path="/cart" element={<Cart/>}> </Route>*/}
          {/*  <Route path="/checkout" element={<Checkout/>}> </Route>*/}
