@@ -1,7 +1,8 @@
 import {useState } from "react";
 import './ItemCount.css';
 
-const ItemCount = ({stock, inicial}) => {
+
+const ItemCount = ({stock, inicial, onAdd }) => {
      
     const [contador, setContador] = useState (inicial)
     const mas = () => {
@@ -10,20 +11,16 @@ const ItemCount = ({stock, inicial}) => {
     const menos = () => {
         if (contador>1 && stock>0) {setContador (prev=>prev-1)}
     } 
-     
-    const onAdd= ()=>  {console.log ({contador})        
-    }
-
-    return (  <>
-        
+      
+    return (  
+    <>
         <div id= "divBotones">
             <button onClick={menos} > - </button>
             <>{contador}</>
             <button onClick={mas}> + </button>
         </div>
-        <button id= "botonAgregar" onClick={onAdd}> Agregar al carrito</button>
-        
-        </>
+      <button id= "botonAgregar" onClick={()=>onAdd (contador)}> Agregar al carrito</button>
+    </>
     );
 }
  
