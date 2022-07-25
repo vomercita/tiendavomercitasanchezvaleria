@@ -1,0 +1,22 @@
+#divDetail{
+    display: flex;
+    width: 50%;
+    text-align: center;
+    margin:auto;
+    border: solid;
+    border-color: pink;
+    border-radius: 4px; 
+
+}
+
+#imgDetail {
+    display: block;
+    width: 50%;
+    margin: auto;
+    
+}
+
+#bla1, #bla2 {
+    margin: auto;
+
+}

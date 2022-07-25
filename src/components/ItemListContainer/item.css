@@ -1,0 +1,21 @@
+#divItem {
+    display: inline-block;
+    width: 20%;
+    
+    text-align: center;
+    margin:1.5rem;
+    border: solid;
+    border-color: pink;
+    border-radius: 4px;
+    
+}
+
+#imgItem {
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+h1{
+    font-size: 1.4rem;
+}
