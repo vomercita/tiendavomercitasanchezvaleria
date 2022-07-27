@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import "./cart.css";
 
 const Cart = () => {
     const {cartItems} =useContext(CartContext);
@@ -18,21 +19,19 @@ const Cart = () => {
 
     return ( 
         <>
+        <div id="divCart">
         {cartItems.map(detalle =>
-            <div className='container-fluid'>
-              <div className='d-flex'>
-                  <div className="card text-center">
-                      <div className="card-body">
-                          <h3 className="card-title" > {detalle.nombre}</h3>
-                          <p className="card-text">Categoría: {detalle.categoria}</p>
-                          <p className="card-text">PRECIO: ${detalle.precio}</p>
+                      <div >
+                          <h3 > {detalle.nombre}</h3>
+                          <p>Categoría: {detalle.categoria}</p>
+                          <p>PRECIO: ${detalle.precio}</p>
                        {/*    <p className="card-text">Cantidad: {detalle.cantidad}</p> */}
                        </div>
-                  </div>
-              </div>
-            </div>)}
+            )}
           <h1> {`TOTAL:$ ${precioTotal}`}</h1>
-          <Link to="/"><button>Volver al listado</button></Link>
+          <Link to="/"><button>Seguir comprando</button></Link>
+          <Link to="/checkout"><button>Terminar compra</button></Link>
+          </div>
         </>
     );
 }

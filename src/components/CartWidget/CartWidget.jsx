@@ -9,7 +9,7 @@ const CartWidget = () => {
             <>
             <Link style={{textDecoration:"none", color:"black"}} to="/cart">
                 <img src={carrito} alt="ícono de carrito de compras"/>
-                <span >{cartItems.length}</span>
+                <span >{cartItems.length==0 ? "" : cartItems.length}</span>
             </Link>
             </>
         );

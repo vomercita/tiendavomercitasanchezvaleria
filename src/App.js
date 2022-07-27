@@ -5,22 +5,20 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartProvider from './contexts/CartContext.jsx';
-import { useState } from 'react';
 import Cart from './components/Cart/Cart.jsx';
+import Error from './components/Error404/Error.jsx'
 
 function App() {
-  const [cantidadItems, setCantidadItems]= useState (0);
-
   return (
     <> 
     <CartProvider>
       <BrowserRouter>
-          <NavBar nombre= "Tienda Vomercita" cantidadItems={cantidadItems}/>
+          <NavBar nombre= "Tienda Vomercita" />
           <Routes>  
                 <Route index element={<ItemListContainer/>}> </Route>
                 <Route path="/category/:name" element={<ItemListContainer/>}> </Route>
-                <Route path="/item/:id" element={<ItemDetailContainer setCantidadItems={setCantidadItems}/>}> </Route>
-                <Route path="*" element={<div>ERROR 404</div>}> </Route>
+                <Route path="/item/:id" element={<ItemDetailContainer/>}> </Route>
+                <Route path="*" element={<Error/>}> </Route>
                 <Route path="/cart" element={<Cart/>}> </Route>
         </Routes>
       </BrowserRouter>

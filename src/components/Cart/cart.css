@@ -1,0 +1,13 @@
+#divCart {
+    display: inline-block;
+    
+   
+    text-align: center;
+    margin:4rem;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(126, 70, 116);
+    border-radius: 4px;
+
+}
+
