@@ -12,6 +12,8 @@ const ItemDetail= ({detalle}) => {
     const onAdd=(cantidad)=>{
         setCantidad (cantidad);
         setCartItems((prev)=> [...prev, detalle])
+        
+        
     }; 
 
     return (
@@ -23,7 +25,7 @@ const ItemDetail= ({detalle}) => {
             <img id="imgDetail" src= {foto} alt="imagen del producto"/>
             <p>{descripcion}</p>
             <p>PRECIO: $ {precio}</p>
-            <p>{stock - cantidad} unidades disponibles</p>
+            <p>{stock - cantidad} items en stock</p>
             </div>
             <div id="bla2">
             {cantidad === 0 ? <ItemCount stock={stock} inicial= {1} onAdd={onAdd}/> : <p> Se agregaron {cantidad} productos al carrito</p>}

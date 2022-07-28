@@ -11,7 +11,8 @@ const ItemCount = ({stock, inicial, onAdd }) => {
     const menos = () => {
         if (contador>1 && stock>0) {setContador (prev=>prev-1)}
     } 
-      
+    
+    
     return (  
     <>
         <div id= "divBotones">
