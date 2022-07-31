@@ -30,7 +30,8 @@ button {
     text-align: center;
     padding: 10px;
     border-color: brown;
-    background-color: pink;
+    border-width: 1px;
     border-radius: 4px;
+    background-color: pink;
 }
 button:hover {background-color: rgb(248, 213, 219)}

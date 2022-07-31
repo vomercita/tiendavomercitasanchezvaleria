@@ -3,6 +3,7 @@ import productosArray from './productosArray';
 import ItemList from './ItemList';
 import {useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
+import {getDoc, doc, getFirestore, collection, getDocs, query, } from "firebase/firestore"
 
 function promesaProductos (){
     return new Promise ((resolve, reject)=>{
@@ -17,6 +18,23 @@ const ItemListContainer=()=>{
     const [loading, setLoading] = useState(false);
 
     useEffect(()=>{
+
+/*UN SOLO DOC 
+const db = getFirestore();
+const docRef=doc(db, "Items", "Items")
+getDoc(docRef).then ((snapshot)=>{
+    console.log(snapshot.data());
+    const data = {id: snapshot.id, ...snapshot.data()};}) */
+
+/* UNA COLECCION 
+const db= getFirestore()
+const itemsCollection= collection(db, "Items");
+getDocs(itemsCollection).then ((snapshot)=>{
+   const data = snapshot.docs.map (doc=>({
+    id:doc.id, ...doc.data()
+   }))
+   console.log(data)
+}) */
         setLoading(true);
         promesaProductos()
           .then((res)=>{
@@ -30,14 +48,13 @@ const ItemListContainer=()=>{
     ,[name]);
     if (loading) return <Loading/>;
 
-return(
-    <div>
+    return(
         <div>
-            <ItemList productos={productosEstado}/>
+            <div >
+                <ItemList productos={productosEstado}/>
+            </div>
         </div>
-    </div>
-)
-
+    )
 }
 export default ItemListContainer
 

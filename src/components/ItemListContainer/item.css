@@ -1,7 +1,6 @@
 #divItem {
     background-color: rgba(252, 169, 245, 0.062);
     display: inline-block;
-    
     width: 20%;
     text-align: center;
     margin:1.5rem;
@@ -20,3 +19,4 @@
 h1{
     font-size: 1.4rem;
 }
+
