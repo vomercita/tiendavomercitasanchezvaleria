@@ -16,9 +16,9 @@ useEffect(()=>{
     const docRef=doc(db, "Items", `${id}`);
     getDoc(docRef).then ((snapshot)=>{
     setDetalleEstado( {id: snapshot.id, ...snapshot.data()});
-    })
+    setLoading(false);})
     
-    setLoading(false);
+    
     } ,[id]);
     if (loading) return <Loading />;
 

@@ -20,12 +20,15 @@ const ItemListContainer=()=>{
         )
     if (name)
             {getDocs(coleccionFiltrada).then ((snapshot)=>{
-    setProductosEstado( snapshot.docs.map (doc=>({id:doc.id, ...doc.data()})))})}
+            
+            setProductosEstado( snapshot.docs.map (doc=>({id:doc.id, ...doc.data()})));
+            setLoading(false)})}
 
     else     {getDocs(itemsCollection).then ((snapshot)=>{
-    setProductosEstado (snapshot.docs.map (doc=>({id:doc.id, ...doc.data()})))})
+    setProductosEstado (snapshot.docs.map (doc=>({id:doc.id, ...doc.data()})));
+    setLoading(false)})
  }  
-    setLoading(false);
+    
     },[name]);
     if (loading) return <Loading/>; 
 
