@@ -8,7 +8,7 @@ const CartProvider = ({children}) => {
     const vaciarCarrito = ()=>{setCartItems([])};
 
     const vaciarItem=(itemId)=>{
-        setCartItems(cartItems.filter (elemento=>elemento.item.id !==itemId))
+        return setCartItems(cartItems.filter (elemento=>elemento.item.id !==itemId))
     }
 
     const addItem=(item, quantity)=>{
