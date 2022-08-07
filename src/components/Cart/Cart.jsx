@@ -4,8 +4,8 @@ import { CartContext } from "../../contexts/CartContext";
 import "./cart.css";
 
 const Cart = () => {
-    const {cartItems,vaciarCarrito, vaciarItem, precioTotal} =useContext(CartContext);
-    const precioFinal=precioTotal();
+    const {cartItems,removeCart, removeItem, totalPrice} =useContext(CartContext);
+    const finalPrice=totalPrice();
     
         return ( cartItems.length >0 ?
         <> 
@@ -16,19 +16,31 @@ const Cart = () => {
                           <p>PRECIO: ${detalle.item.precio}</p>
                           <p> Cantidad: {detalle.quantity}</p>
                           <p>Subtotal: $ {detalle.item.precio*detalle.quantity}</p>
-                          <button onClick={()=>vaciarItem(detalle.item.id)}>Eliminar</button>
+                          <button onClick={()=>removeItem(detalle.item.id)}>Eliminar</button>
                        </div>
             )}
-          <h1> Total: $ {precioFinal}</h1>
+          <h1> Total: $ {finalPrice}</h1>
           <Link to="/"><button>Seguir comprando</button></Link>
           <Link to="/checkout"><button>Terminar compra</button></Link>
-          <button onClick={vaciarCarrito}>Vaciar carrito</button>
+          <button onClick={removeCart}>Vaciar carrito</button>
           </div>
+<div>
+          {/* <button onClick={()=>sendOrder({finalPrice})}>bla</button> */}
+
+  </div>        
+          <form>  
+            <input type="text" name="" id="" />
+            <input type="email" name="" id="" />
+            <input type="number" name="" id="" />
+
+          </form>
+          <div>.</div><div>.</div><div>.</div>
         </> 
         : 
         <>
         <div className="my-5 d-flex flex-column align-items-center justify-content-center"> CARRITO VACÍO 
         <Link to="/"><button>Volver al listado</button></Link></div>
+        
         </> 
     );
 } 

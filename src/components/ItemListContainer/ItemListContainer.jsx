@@ -9,15 +9,24 @@ const ItemListContainer=()=>{
     const [productosEstado, setProductosEstado]= useState ([]);
     const [loading, setLoading] = useState(false);
 
- useEffect(()=>{
-    setLoading(true); 
-
+ 
+//OJO ESTO COPIADO P DEJARLO FUERA DEL EFFECT
     const db= getFirestore();
     const itemsCollection= collection(db, "Items");
 
     const coleccionFiltrada= query(itemsCollection,
         where("categoria", "==", `${name}`))
-        
+//OJO ESTO COPIADO P DEJARLO FUERA DEL EFFECT
+
+useEffect(()=>{
+    setLoading(true);
+    
+   /*  const db= getFirestore();
+    const itemsCollection= collection(db, "Items");
+
+    const coleccionFiltrada= query(itemsCollection,
+        where("categoria", "==", `${name}`)) */
+
     if (name)
             {getDocs(coleccionFiltrada).then ((snapshot)=>{
             
