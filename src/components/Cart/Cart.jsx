@@ -4,8 +4,16 @@ import { CartContext } from "../../contexts/CartContext";
 import "./cart.css";
 
 const Cart = () => {
-    const {cartItems,removeCart, removeItem, totalPrice} =useContext(CartContext);
+    const {cartItems,removeCart, removeItem, totalPrice, sendOrder, updateOrder, updatesOrders} =useContext(CartContext);
     const finalPrice=totalPrice();
+   /*  const submitForm= (e) =>{
+      e.preventDefault();
+      const inputs=document.getElementsByTagName ("input");
+      const data= Array.from (inputs).map ((input)=>input.value);
+      sendOrder(finalPrice, {nombre: data [0], email: data [1], telefono: data [2]})
+ 
+      /* updatesOrders(); */
+    
     
         return ( cartItems.length >0 ?
         <> 
@@ -21,20 +29,10 @@ const Cart = () => {
             )}
           <h1> Total: $ {finalPrice}</h1>
           <Link to="/"><button>Seguir comprando</button></Link>
-          <Link to="/checkout"><button>Terminar compra</button></Link>
           <button onClick={removeCart}>Vaciar carrito</button>
+          <Link to="/checkout"> <button>Terminar compra</button></Link> 
           </div>
-<div>
-          {/* <button onClick={()=>sendOrder({finalPrice})}>bla</button> */}
-
-  </div>        
-          <form>  
-            <input type="text" name="" id="" />
-            <input type="email" name="" id="" />
-            <input type="number" name="" id="" />
-
-          </form>
-          <div>.</div><div>.</div><div>.</div>
+            
         </> 
         : 
         <>

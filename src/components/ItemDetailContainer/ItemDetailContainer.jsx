@@ -9,21 +9,16 @@ const ItemDetailContainer=()=>{
     const {id}= useParams();
     const [detalleEstado, setDetalleEstado]= useState ([]);
 
-//OJO ESTO REPETIDO. FUERA DEL EFFECT PA PROBAR
 const db = getFirestore();
 const docRef=doc(db, "Items", `${id}`);
-//OJO ESTO REPETIDO. FUERA DEL EFFECT PA PROBAR
 
 useEffect(()=>{
     setLoading(true);
-    /* const db = getFirestore();
-    const docRef=doc(db, "Items", `${id}`); */
-   
     getDoc(docRef).then ((snapshot)=>{
     setDetalleEstado( {id: snapshot.id, ...snapshot.data()});
     setLoading(false);})
-        
     } ,[id]);
+    
     if (loading) return <Loading />;
 
 return(
