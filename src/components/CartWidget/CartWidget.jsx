@@ -11,7 +11,7 @@ const CartWidget = () => {
             <>
             <Link style={{textDecoration:"none", color:"black"}} to="/cart">
                 <img src={carrito} alt="ícono de carrito de compras"/>
-                <span >{cartItems.length==0 ? "" : cartNumber}</span>
+                <span >{cartItems.length===0 ? "" : cartNumber}</span>
             </Link>
             </>
         );

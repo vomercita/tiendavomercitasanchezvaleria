@@ -30,7 +30,6 @@ const NavBar=({nombre})=>{
   </div>
 </nav></>
     )
-
 };
 
 export default NavBar;
