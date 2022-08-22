@@ -4,7 +4,6 @@
     margin: auto;
     text-align: center;
 }
-#botonAgregar:hover {color:white}
 #botonAgregar {
     display:block;
     border: solid;
@@ -12,10 +11,15 @@
     border-radius: 4px;
     margin: auto;
 }
-#botonAgregar:hover{cursor: pointer; 
-background-color: pink;
+#botonAgregar:hover{
+    cursor: pointer; 
+    color:white;
+    background-color: pink;
 }
-
+#botonAgregar:active{
+    color:rgb(64, 15, 77);
+    font-size: large;
+}
 #divBotones {
     color:brown;
     font-weight: bolder;
@@ -25,13 +29,29 @@ background-color: pink;
 }
 button {
     color:brown;
-    font-weight: bolder;
     margin: 15px;
     text-align: center;
     padding: 10px;
-    border-color: brown;
+    border-color: rgb(63, 31, 51);
     border-width: 1px;
     border-radius: 4px;
     background-color: pink;
+    box-shadow: 2px 4px 2px 2px #eeb2e188;
 }
-button:hover {background-color: rgb(248, 213, 219)}
+button:hover {
+    background-color: rgb(248, 213, 219);
+    color:rgb(63, 31, 51);
+    box-shadow: 2px 4px 2px 2px #96959688;
+ }
+
+.countButtons{
+    color: rgb(76, 29, 104);
+    border-radius: 100%;
+    font-size: smaller;
+    padding: none;
+    border: none;
+    background-color: white;
+}
+.countButtons:hover {
+    background-color: white;
+}

@@ -1,5 +1,7 @@
-import { addDoc, collection, getFirestore, updateDoc, doc, writeBatch } from "firebase/firestore";
+import { addDoc, collection, getFirestore} from "firebase/firestore";
 import React, {createContext, useState} from "react";
+import swal from 'sweetalert';
+import "./swal.css";
 
 export const CartContext = createContext();
 
@@ -33,7 +35,7 @@ const CartProvider = ({children}) => {
     const totalProducts =()=>{
         return cartItems.reduce ((prev,actual)=>prev+actual.quantity, 0)
     }
-    
+ 
     const sendOrder =(totalPrice, clientData)=>{
         
         const db = getFirestore();
@@ -44,27 +46,14 @@ const CartProvider = ({children}) => {
             fecha: new Date(),
            }
         const orderCollection = collection(db, "orders");
-        addDoc(orderCollection, order).then (res=>alert (("tu numero de compra es :")+ (res.id)))
+        addDoc(orderCollection, order).then (res=>
+            swal (
+                {
+                title: "GRACIAS POR TU COMPRA!!",
+                text: "tu ORDEN de compra es: \n"+ (res.id),
+                icon: "success",}
+            ))
     }
-   /*
-    const updateOrder= ()=>{
-        const db= getFirestore();
-        const docRef= doc (db, "orders", "lVhV2zLU9eibBkPAX8rC");
-        updateDoc(docRef, {total:500}). then (res=> alert ("order succesfull"))
-    } */
-
-    /* const updatesOrders = ()=>{
-        const db= getFirestore();
-        const batch= writeBatch(db);
-        const docRef= doc (db, "orders", "lVhV2zLU9eibBkPAX8rC");
-        const docRef2= doc (db, "orders", "yLtbYh2UJzkEF42kgDAL");
-
-        batch.update(docRef, {total:1844440});
-        batch.update(docRef2, {total:28555550});
-        //1.23h
-        batch.commit();
-    } */
-
     return (
         <CartContext.Provider value={{cartItems, setCartItems, removeCart,removeItem, addItem, totalPrice,totalProducts, sendOrder, /* updatesOrders */ }}>
            {children}

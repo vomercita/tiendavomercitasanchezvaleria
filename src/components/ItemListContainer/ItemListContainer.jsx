@@ -9,13 +9,15 @@ const ItemListContainer=()=>{
     const [productosEstado, setProductosEstado]= useState ([]);
     const [loading, setLoading] = useState(false);
 
+    
+ useEffect(()=>{   
     const db= getFirestore();
     const itemsCollection= collection(db, "Items");
 
     const coleccionFiltrada= query(itemsCollection,
         where("categoria", "==", `${name}`))
 
-useEffect(()=>{
+
     setLoading(true);
     if (name)
             {getDocs(coleccionFiltrada).then ((snapshot)=>{

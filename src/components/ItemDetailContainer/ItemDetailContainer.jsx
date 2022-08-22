@@ -3,6 +3,7 @@ import ItemDetail from  './ItemDetail';
 import {useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import {getDoc, doc, getFirestore} from "firebase/firestore"
+import Error from "../Error404/Error";
 
 const ItemDetailContainer=()=>{
     const [loading, setLoading] = useState(false);
@@ -21,12 +22,14 @@ useEffect(()=>{
     
     if (loading) return <Loading />;
 
-return(
+return( (id<11) ?
     <div>
         <div>
             <ItemDetail item={detalleEstado}/>
         </div>
     </div>
+    :
+    <Error/>
 )
 }
 export default ItemDetailContainer

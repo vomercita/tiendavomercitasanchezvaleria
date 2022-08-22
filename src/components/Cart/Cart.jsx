@@ -9,7 +9,7 @@ const Cart = () => {
     
         return ( cartItems.length >0 ?
         <> 
-        <div id="divCart">
+        <div id="divCart"  >
         {cartItems.map(detalle =>
                       <div >
                           <h3 > {detalle.item.nombre}</h3>

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
 const Checkout = () => {
-    const {totalPrice, sendOrder} =useContext(CartContext);
+    const {totalPrice, sendOrder, removeCart} =useContext(CartContext);
     const finalPrice=totalPrice();
     const submitForm= (e) =>{
       e.preventDefault();
@@ -17,20 +17,23 @@ const Checkout = () => {
           <h1 className="d-flex flex-column align-items-center my-5"> Total: $ {finalPrice}</h1>
          
           <form className="d-flex flex-column align-items-center" onSubmit={submitForm}> 
-            <label htmlFor="">Nombre y Apellido</label> 
-            <input type="text" name="" id="" />
+            <label htmlFor="">Nombre*</label> 
+            <input type="text" required="required" />
 
-            <label htmlFor="">E-mail</label> 
-            <input type="email" name="" id="" />
-            
+            <label htmlFor="">Apellido*</label> 
+            <input type="text" required="required" />
+
+            <label htmlFor="">E-mail*</label> 
+            <input type="email" required="required" />
+                      
             <label htmlFor="">Teléfono</label> 
-            <input type="number" name="" id="" />
-            
-            <button onClick={()=>sendOrder(finalPrice)} type="submit">Enviar</button> 
+            <input type="number"/>
+            <p style= {{fontSize: 12, color:"red"}}>*campos obligatorios</p>
+            <button onClick={()=>sendOrder(finalPrice)} type="submit">Enviar datos y realizar la compra</button> 
           </form> 
           <div className="d-flex flex-column align-items-center">
           <Link to="/cart"><button>Volver al carrito</button></Link>
-          <Link to="/"><button>Home</button></Link>
+          <Link to="/"><button onClick={removeCart}>Home</button></Link>
           </div>
         </> 
     );

@@ -9,7 +9,7 @@ const Item = ({item}) => {
             <h1> {nombre}</h1>
             <p>{categoria}</p>
             <img id='imgItem' src= {foto} alt="imagen del producto"/>
-            <Link to={`/item/${id}`}><button >Ver detalle del producto</button></Link>
+            <Link to={`/item/${id}`}><button >Ver detalles</button></Link>
         </div>
     </>
     );
